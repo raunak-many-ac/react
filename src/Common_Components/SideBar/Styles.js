@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 
-export const Icon = styled.img`
+export const Svg = styled.svg`
         margin-left: 100%;
 `;
+
 
 export const Logo = styled.img`
         
