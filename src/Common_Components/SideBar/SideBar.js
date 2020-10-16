@@ -6,10 +6,13 @@ import { Logo, BrandName, StyledSideNav } from "./Styles.js";
 import MyDashboardIcon from "./Icons/MyDashboardIcon";
 import ContactUsIcon from './Icons/ContactUsIcon';
 import CaseStudyIcon from './Icons/CaseStudyIcon';
+import {ThemeContext} from "../../Theme";
+
 
 
 
 class SideNav extends React.Component {
+    static contextType = ThemeContext;
 
     constructor(props) {
         super(props);
@@ -44,8 +47,9 @@ class SideNav extends React.Component {
 
     render() {
         const { items, activePath } = this.state;
+        const {lightestColor} = this.context;
         return (
-            <StyledSideNav>
+            <StyledSideNav color= {lightestColor}>
 
                 <Logo src={logo} height="65px" width="50px" />
                 <BrandName> SBG.ai</BrandName>

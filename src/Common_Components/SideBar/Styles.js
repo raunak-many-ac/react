@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 
+
 export const Svg = styled.svg`
         margin-left: 100%;
 `;
@@ -35,18 +36,18 @@ a {
 }
 `;
 
+
 export const StyledSideNav = styled.div` 
         position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
         height: 100%;
         width: 14%;     /* Set the width of the sidebar */
         z-index: 1;      /* Stay on top of everything */
-        background-color:  #ECECFF;
+        /* background-color:  #ECECFF; */
+        background-color: ${props => props.color};
         overflow-x: hidden;     /* Disable horizontal scroll */
         
-
         .side-icon{
             margin-left: 100%;
-            /* background-color: #0f0552; */
         }
 
 `;
