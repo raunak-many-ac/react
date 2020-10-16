@@ -1,16 +1,14 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import styled from 'styled-components';
 import profile_image from "../../assets/profile.svg"
 
 import {CircularImage, LogOut, TabNameDiv, Header} from "./Styles";
 
 
-
-export class NavigationBar extends React.Component {
+export default class TopBar extends React.Component {
 
   state = {
-    path: ""
+    path: "/mydashboard"
   }
 
   componentDidMount(){
@@ -24,11 +22,9 @@ export class NavigationBar extends React.Component {
   render() {
 
     //..tabs on the navigation bar
-    const TabName = (props) => {
-      
-      console.log(window.location.pathname);
-      
-      if (this.state.path.localeCompare("/exploreai"))
+    const TabName = () => {
+
+      if (this.state.path.localeCompare("/mydashboard") == 0)
         return (
           <TabNameDiv> My dashboard </TabNameDiv>
         );

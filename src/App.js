@@ -1,9 +1,8 @@
 import React from 'react';
-// import './css/App.css';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { NavigationBar } from './Common_Components/Header/NavigationBar';
+import TopBar from './Common_Components/TopBar/TopBar';
 import SideBar from './Common_Components/SideBar/SideBar';
 import {MyDashboard} from "./Pages/MyDashboard";
 import {ExploreAi} from "./Pages/ExploreAi";
@@ -16,9 +15,9 @@ function App() {
         <SideBar/>
         
         <Switch>
-          <Route exact path = "/"  component={(props) => <NavigationBar tabname = "My Dashboard" />}/>
-          <Route exact path = "/mydashboard"  component={(props) => <NavigationBar tabname = "My Dashboard" />}/>
-          <Route exact path = "/exploreai" component={(props) => <NavigationBar tabname = "Case Study" />}/>
+          <Route exact path = "/"  component={(props) => <TopBar tabname = "My Dashboard" />}/>
+          <Route exact path = "/mydashboard"  component={(props) => <TopBar tabname = "My Dashboard" />}/>
+          <Route exact path = "/exploreai" component={(props) => <TopBar tabname = "Case Study" />}/>
         </Switch>
 
         <Switch>
