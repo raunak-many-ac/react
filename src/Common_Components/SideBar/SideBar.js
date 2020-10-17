@@ -4,11 +4,10 @@ import logo from "../../assets/download.png";
 import { Logo, BrandName, StyledSideNav } from "./Styles.js";
 
 import MyDashboardIcon from "./Icons/MyDashboardIcon";
-import ContactUsIcon from './Icons/ContactUsIcon';
-import CaseStudyIcon from './Icons/CaseStudyIcon';
+import ContactUsIcon from "./Icons/ContactUsIcon";
+import CaseStudyIcon from "./Icons/CaseStudyIcon";
+import ThemeSelector from  "./Icons/ThemeSelector/ThemeSelector";
 import {ThemeContext} from "../../Theme";
-
-
 
 
 class SideNav extends React.Component {
@@ -47,12 +46,12 @@ class SideNav extends React.Component {
 
     render() {
         const { items, activePath } = this.state;
-        const {lightestColor} = this.context;
+        const {lightestColor, text_color} = this.context;
         return (
             <StyledSideNav color= {lightestColor}>
 
                 <Logo src={logo} height="65px" width="50px" />
-                <BrandName> SBG.ai</BrandName>
+                <BrandName color= {text_color}> SBG.ai</BrandName>
 
                 {
                     items.map((item) => {
@@ -92,6 +91,8 @@ class SideNav extends React.Component {
                             );        
                     })
                 }
+
+                <ThemeSelector/>    
 
             </StyledSideNav>
         );

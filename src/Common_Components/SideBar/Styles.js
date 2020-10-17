@@ -1,23 +1,19 @@
 import styled from 'styled-components';
 
-
-
 export const Svg = styled.svg`
         margin-left: 100%;
 `;
 
 
 export const Logo = styled.img`
-        
         padding-bottom: 8%;
         margin-left: 15%;
-        margin-top: 8%;
-          
+        margin-top: 8%;  
 `;
 
 export const BrandName = styled.span`
         font-size: 1.4em;
-        color: #0f0552;
+        color: ${props => props.color};
         margin-top: 8%;
  `;
 
@@ -42,7 +38,6 @@ export const StyledSideNav = styled.div`
         height: 100%;
         width: 14%;     /* Set the width of the sidebar */
         z-index: 1;      /* Stay on top of everything */
-        /* background-color:  #ECECFF; */
         background-color: ${props => props.color};
         overflow-x: hidden;     /* Disable horizontal scroll */
         

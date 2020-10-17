@@ -1,5 +1,6 @@
 import React, { Component, createContext } from 'react';
 
+
 export const ThemeContext = createContext();
 
 export default class ThemeProvider extends Component {
@@ -9,20 +10,21 @@ export default class ThemeProvider extends Component {
                 lightestColor: "#ECECFF",
                 lightColor: "#6272d5",
                 darkColor: "#3448c5",
-                inactiveColor: "#9fbfdf"
+                inactiveColor: "#9fbfdf",
+                text_color: "#0f0552"
         };
 
-        //..red theme
-        // state = {
-        //         lightestColor: "#ffc8c8",
-        //         lightColor: "#FF6666",
-        //         darkColor: "#FF0000",
-        //         inactiveColor: "#A87D7D"
-        // };
+        changeTheme = (newstate) =>{
+                this.setState(
+                        {
+                                ...newstate
+                        }
+                );
+        }
 
         render() {
                 return (
-                        <ThemeContext.Provider value={{ ...this.state }}>
+                        <ThemeContext.Provider value={{ ...this.state, changeTheme: this.changeTheme }}>
                                 {this.props.children}
                         </ThemeContext.Provider>
                 );
