@@ -15,6 +15,7 @@ export const BrandName = styled.span`
         font-size: 1.4em;
         color: ${props => props.color};
         margin-top: 8%;
+        font-weight: bolder;
  `;
 
 export const StyledNavItem = styled.div`

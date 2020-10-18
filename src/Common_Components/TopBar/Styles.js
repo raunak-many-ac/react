@@ -15,10 +15,9 @@ export const LogOut = styled.span`
 
 export const TabNameDiv = styled.span`
     width: 30%;   
-    margin-left: 5%;
+    margin-left: 10%;
     font-family: Helvetica;
     background-color: #fff;
-    margin-top: 1%;
     border: none;
     background: none;
     outline:none;
@@ -26,7 +25,7 @@ export const TabNameDiv = styled.span`
 `;
 
 export const Header = styled.div` 
-background-color: #fff; 
-margin-left: 14%;
-padding-right: 10%;
+    background-color: #fff; 
+    margin-left: 14%;
+    padding-right: 10%;
 `;

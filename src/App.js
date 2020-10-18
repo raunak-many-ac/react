@@ -4,8 +4,8 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import TopBar from "./Common_Components/TopBar/TopBar";
 import SideBar from "./Common_Components/SideBar/SideBar";
-import {MyDashboard} from "./Pages/MyDashboard";
-import {ExploreAi} from "./Pages/ExploreAi";
+import MyDashboard from "./Pages/Mydashboard/MyDashboard";
+import {ExploreAi} from "./Pages/ExploreAi/ExploreAi";
 
 
 function App() {
