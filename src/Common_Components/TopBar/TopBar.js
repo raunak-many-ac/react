@@ -24,7 +24,7 @@ export default class TopBar extends React.Component {
     //..tabs on the navigation bar
     const TabName = () => {
 
-      if (this.state.path.localeCompare("/mydashboard") == 0)
+      if (this.state.path.localeCompare("/mydashboard") == 0 || this.state.path.localeCompare("/") == 0)
         return (
           <TabNameDiv> My dashboard </TabNameDiv>
         );

@@ -6,65 +6,94 @@ import img3 from "../../../../assets/image_quickconcepts_ml3.png";
 import img4 from "../../../../assets/image_quickconcepts_ml4.png";
 
 import { WideCardContainer, WideCard, TextContainer, FeatureText, LargeCardTitle, BottomCardContainer } from "./Styles";
-import {HorizontalCardContainer, Card, SmallCardTitle, TimeToRead, LightText} from "./Styles";
+import { HorizontalCardContainer, Card, SmallCardTitle, TimeToRead, LightText } from "./Styles";
 
 
 class QuickConceptsTab extends React.Component {
+
+     data = {
+          wideCards: [
+               {
+                    feature: "Quick Learn",
+                    title: "Machine Learning vs Deep Learning",
+                    time: "10 min",
+                    margin: "0%"
+               },
+               {
+                    feature: "Quick Learn",
+                    title: "Machine Learning vs Deep Learning",
+                    time: "5 min",
+                    margin: "3%"
+
+               }
+          ],
+
+          cards: [
+               {
+                    src: img1,
+                    title: "How business needs to change to be AI ready?",
+                    time: "6 min",
+                    source: "Bussiness Insider",
+                    margin: "0%"
+               },
+               {
+                    src: img2,
+                    title: "Is neuralink actually gonna save world?",
+                    time: "10 min",
+                    source: "Medium",
+                    margin: "2%"
+               },
+               {
+                    src: img3,
+                    title: "A primer on Artificial Intelligence (AI)",
+                    time: "5 min",
+                    source: "Hackernoon",
+                    margin: "2%"
+
+               },
+               {
+                    src: img4,
+                    title: "Machine learning vs Deep learning",
+                    time: "8 min",
+                    source: "Medium",
+                    margin: "2%"
+               },
+          ]
+     }
+
      render() {
 
           return (
                <div>
                     <WideCardContainer>
-                         <WideCard margin="0%" src={background} >
-                              
-                               <TextContainer>
-                                   <FeatureText>Quick Learn</FeatureText>
-                                   <LargeCardTitle>Machine Learning vs Deep Learning</LargeCardTitle>
-                                   <BottomCardContainer><FeatureText>10 min course</FeatureText></BottomCardContainer>
-                              </TextContainer>
-                         </WideCard>
+                         {
+                              this.data.wideCards.map((item =>
 
-                         <WideCard margin="3%" src={background}>
-                              
-                               <TextContainer>
-                                   <FeatureText>Quick Learn</FeatureText> 
-                                   <LargeCardTitle>Machine Learning vs Deep Learning</LargeCardTitle>
-                                   <BottomCardContainer><FeatureText>5 min Course</FeatureText></BottomCardContainer>
-                              </TextContainer>
-                         </WideCard>
+                                   <WideCard margin={item.margin} src={background} >
+                                        <TextContainer>
+                                             <FeatureText>{item.feature}</FeatureText>
+                                             <LargeCardTitle>{item.title}</LargeCardTitle>
+                                             <BottomCardContainer><FeatureText>{item.time + " read"}</FeatureText></BottomCardContainer>
+                                        </TextContainer>
+                                   </WideCard>
+
+                              ))
+                         }
                     </WideCardContainer>
 
                     <HorizontalCardContainer>
-                         <Card margin = "0%">
-                              <img src = {img1}/>
-                              <SmallCardTitle>How business needs to change to be AI ready?</SmallCardTitle>
-                              <TimeToRead>6 min read</TimeToRead>
-                              <LightText>Business Insider</LightText>
+                         {
+                              this.data.cards.map((item =>
+                                   <Card margin={item.margin}>
+                                        <img src={item.src} />
+                                        <SmallCardTitle>{item.title}</SmallCardTitle>
+                                        <TimeToRead>{item.time} read</TimeToRead>
+                                        <LightText>{item.source}</LightText>
 
-                         </Card >
+                                   </Card >
 
-                         <Card margin = "2%">
-                              <img src = {img2}/>
-                              <SmallCardTitle>Is neuralink actually gonna save world?</SmallCardTitle>
-                              <TimeToRead>10 min read</TimeToRead>
-                              <LightText>Medium</LightText>
-
-                         </Card>
-
-                         <Card margin = "2%">
-                              <img src = {img3}/>
-                              <SmallCardTitle>A primer on Artificial Intelligence (AI)</SmallCardTitle>
-                              <TimeToRead>5 min read</TimeToRead>
-                              <LightText>Hackernoon</LightText>
-
-                         </Card>
-
-                         <Card margin = "2%">
-                              <img src = {img4}/>
-                              <SmallCardTitle>Machine learning vs Deep learning</SmallCardTitle>
-                              <TimeToRead>8 min read</TimeToRead>
-                              <LightText>Medium</LightText>
-                         </Card>
+                              ))
+                         }
                     </HorizontalCardContainer>
                </div>
           );

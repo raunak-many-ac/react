@@ -47,6 +47,7 @@ export const HorizontalCardContainer = styled.div`
      width: 100%;
      margin-top: 3%;
      display: flex;
+     margin-bottom: 10%;
 `;
 
 export const Card = styled.span`

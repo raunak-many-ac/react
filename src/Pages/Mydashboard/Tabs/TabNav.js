@@ -15,9 +15,9 @@ class TabNav extends React.Component {
                                                         if (tab === this.props.selected) {
                                                                 return (
                                                                         <ActiveTab key={tab} onClick={() => this.props.setSelected(tab)} margin={tab !== "Quick Concepts" ? "1%" : "0%"}>
-                                                                                
-                                                                                        {tab}
-                                                                                
+
+                                                                                {tab}
+
                                                                         </ActiveTab>
                                                                 );
                                                         }
@@ -25,9 +25,9 @@ class TabNav extends React.Component {
 
                                                         return (
                                                                 <InactiveTab key={tab} onClick={() => this.props.setSelected(tab)} margin={tab !== "Quick Concepts" ? "1%" : "0%"}>
-                                                                        
-                                                                                {tab}
-                                                                        
+
+                                                                        {tab}
+
                                                                 </InactiveTab>
                                                         );
                                                 })

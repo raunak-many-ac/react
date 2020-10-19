@@ -45,14 +45,15 @@ class SideNav extends React.Component {
     }
 
     render() {
+        
         const { items, activePath } = this.state;
         const {lightestColor, text_color} = this.context;
+
         return (
             <StyledSideNav color= {lightestColor}>
 
                 <Logo src={logo} height="65px" width="50px" />
                 <BrandName color= {text_color}> SBG.ai</BrandName>
-
                 {
                     items.map((item) => {
                         if (item.name.localeCompare("My Dashboard") == 0)
@@ -61,7 +62,7 @@ class SideNav extends React.Component {
                                 name={item.name}
                                 css={item.css}
                                 onItemClick={this.onItemClick}
-                                active={item.path === activePath}
+                                active={item.path === activePath || item.path === "/"}
                                 key={item.key}
                             />);
 
@@ -93,14 +94,12 @@ class SideNav extends React.Component {
                 }
 
                 <ThemeSelector/>    
-
             </StyledSideNav>
         );
     }
 }
 
 const RouterSideNav = withRouter(SideNav);
-
 
 export default class SideBar extends React.Component {
     render() {
