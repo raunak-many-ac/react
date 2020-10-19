@@ -1,9 +1,19 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="46.188px" height="46.188px" viewBox="0 0 46.188 46.188" style="enable-background:new 0 0 46.188 46.188;"
-	 xml:space="preserve">
+import React from 'react';
+import { ThemeContext } from "../../../../Theme";
+
+
+
+export default class Star extends React.Component {
+  render() {
+    return (
+      <ThemeContext.Consumer>{(context) => {
+        const {darkColor } = context;
+       
+        return (
+                
+                        
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px"
+	 width="30px" height="30px" viewBox="0 0 46.188 46.188"	>
 <g>
 	<g>
 		<path d="M34.396,45.297c-0.934,0-1.84-0.269-2.622-0.777l-8.696-5.651l-8.661,5.651c-1.643,1.067-3.869,1.009-5.452-0.142
@@ -17,7 +27,7 @@
 			c-2.353-0.123-4.419-1.624-5.262-3.823l-2.139-5.577c-0.074-0.193-0.259-0.32-0.466-0.32s-0.392,0.127-0.466,0.32l-2.139,5.577
 			c-0.843,2.2-2.909,3.701-5.262,3.823l-5.965,0.31c-0.205,0.012-0.383,0.149-0.448,0.345c-0.063,0.197,0,0.412,0.161,0.542
 			l4.643,3.757c1.832,1.48,2.621,3.91,2.011,6.186l-1.549,5.77c-0.053,0.199,0.021,0.412,0.189,0.533
-			c0.167,0.121,0.392,0.127,0.564,0.015l5.009-3.255C20.812,33.206,21.938,32.872,23.096,32.872z" fill="#3448c5"/>
+			c0.167,0.121,0.392,0.127,0.564,0.015l5.009-3.255C20.812,33.206,21.938,32.872,23.096,32.872z" fill={darkColor}/>
 	</g>
 </g>
 <g>
@@ -51,3 +61,10 @@
 <g>
 </g>
 </svg>
+
+                
+        );
+}}</ThemeContext.Consumer>
+    )
+  }
+} 

@@ -20,7 +20,7 @@ export default class CaseStudyIcon extends Component {
                         return (
 
                                 <ThemeContext.Consumer>{(context) => {
-                                        const { lightColor, darkColor } = context;
+                                        const { darkColor } = context;
                                        
                                         return (
                                                 <StyledNavItem active={active}>
@@ -52,7 +52,6 @@ export default class CaseStudyIcon extends Component {
                                         </StyledNavItem>
                                 );
                         }}</ThemeContext.Consumer>
-
 
                 );
         }
