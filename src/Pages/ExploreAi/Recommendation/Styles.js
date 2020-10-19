@@ -24,6 +24,11 @@ export const StyledCard = styled.div`
      }
 `;
 
+export const InterestedText = styled.span`
+     margin-left: 2%;
+     margin-right: 2%;
+`;
+
 export const YouMightLike = styled.p`
      margin-left: 30%;
      color: grey;
