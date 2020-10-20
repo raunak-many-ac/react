@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconContainer, Container, StyledCard, HorizontalLine, YouMightLike, FeatureText , Title, SourceText, InterestedText} from "./Styles";
+import {IconContainer, Container, StyledCard, YouMightLike, FeatureText , Title, SourceText, InterestedText} from "./Styles";
 import Star from "./Icons/Star";
 import Bookmark from "./Icons/Bookmark";
 
@@ -13,7 +13,7 @@ export default class Recommendation extends React.Component {
              <InterestedText>Interested?</InterestedText>
              <Bookmark/>
            </IconContainer>
-           <HorizontalLine/>
+           
            <YouMightLike>You might Also like</YouMightLike>
            <StyledCard>
              <FeatureText>Case Study</FeatureText>

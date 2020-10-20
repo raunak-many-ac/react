@@ -7,6 +7,18 @@ export const Container = styled.div`
   width: 60%;
   height: 100%;
 
+  @media (max-width: 768px){
+    margin-left: 5%;
+    margin-right: 0em;
+    width: 80%;
+  }
+`;
+
+export const HorizontalLine = styled.hr`
+    
+     margin-top: 0;
+     padding-top: 0;
+     
 `;
 
 

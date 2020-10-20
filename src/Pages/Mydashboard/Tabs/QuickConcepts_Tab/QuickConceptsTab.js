@@ -6,7 +6,7 @@ import img3 from "../../../../assets/image_quickconcepts_ml3.png";
 import img4 from "../../../../assets/image_quickconcepts_ml4.png";
 
 import { WideCardContainer, WideCard, TextContainer, FeatureText, LargeCardTitle, BottomCardContainer } from "./Styles";
-import { HorizontalCardContainer, Card, SmallCardTitle, TimeToRead, LightText } from "./Styles";
+import { HorizontalCardContainer, Card, SmallCardTitle, TimeToRead, LightText, ImageContainer  } from "./Styles";
 
 
 class QuickConceptsTab extends React.Component {
@@ -85,7 +85,7 @@ class QuickConceptsTab extends React.Component {
                          {
                               this.data.cards.map((item =>
                                    <Card margin={item.margin}>
-                                        <img src={item.src} />
+                                        <ImageContainer  src={item.src} />
                                         <SmallCardTitle>{item.title}</SmallCardTitle>
                                         <TimeToRead>{item.time} read</TimeToRead>
                                         <LightText>{item.source}</LightText>

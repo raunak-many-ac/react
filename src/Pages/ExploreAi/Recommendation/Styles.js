@@ -33,7 +33,16 @@ export const YouMightLike = styled.p`
      margin-left: 30%;
      color: grey;
      opacity: 50%;
+     margin-top: 30%;
      font-family: Helvetica;
+
+     @media (max-width: 1000px){
+          margin-top: 45%;
+     }
+
+     @media (max-width: 700px){
+          margin-top: 80%;
+     }
 `;
 
 export const FeatureText = styled.div`
@@ -56,10 +65,7 @@ export const SourceText = styled.div`
         font-size: 14px;
 `;
 
-export const HorizontalLine = styled.hr`
-     margin-top: 11.6%;
-     padding-top: 0;     
-`;
+
 
      
 

@@ -2,9 +2,6 @@ import React from 'react';
 import {ThemeContext} from "../../../Theme";
 import { SmoothScroller, StyledSection, StyledTabContainer, StyledTab, A, HighLightLine, HorizontalLine } from "./Styles";
 
-
-
-
 const AboutTheProject = (props) => {
      return(
           <div>
@@ -105,17 +102,21 @@ export default class Article extends React.Component {
                               <HighLightLine color={darkColor} visible={this.state.currentTab.localeCompare("Toolkits") == 0}/>
                          </StyledTab>
                     </StyledTabContainer>
+
                     <HorizontalLine/>
 
                     <StyledSection id="About">
                          <AboutTheProject/>
                     </StyledSection>
+
                     <StyledSection id="scope">
                          <ScopeAndOutcome/>
                     </StyledSection>
+
                     <StyledSection id="Team">
                          <TeamsText></TeamsText>
                     </StyledSection>
+                    
                     <StyledSection id="Toolkits">Toolkits blah...blah....</StyledSection>
 
                </SmoothScroller>

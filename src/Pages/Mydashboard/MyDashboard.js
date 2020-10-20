@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from "./Styles";
+import { Container, HorizontalLine } from "./Styles";
 import Carousal from "./Carousal/Carousal";
 import TabNav from "./Tabs/TabNav";
 import Tab from "./Tabs/Tab";
@@ -30,7 +30,7 @@ export default class MyDashboard extends React.Component {
 
         <Carousal/>
           
-        <hr/>
+        <HorizontalLine/>
 
         <TabNav tabs={["Quick Concepts", "Articles", "News"]} selected={ this.state.selected } setSelected={ this.setSelected } >
           <Tab isSelected={ this.state.selected === "Quick Concepts"}  >

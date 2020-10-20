@@ -1,8 +1,12 @@
-import styled from 'styled-components';
 
+import styled from 'styled-components';
 
 export const WideCardContainer = styled.div`
      display: flex;
+
+     @media (max-width: 768px){
+          flex-direction: column;
+     }
 `;
 
 export const WideCard = styled.div`
@@ -16,6 +20,13 @@ export const WideCard = styled.div`
      background-size: 100% 100%;
      border-radius: 20px;
      overflow: hidden;
+
+     @media (max-width: 768px){
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 5%;
+
+     }
 `;
 
 export const FeatureText = styled.div`
@@ -48,13 +59,17 @@ export const HorizontalCardContainer = styled.div`
      margin-top: 3%;
      display: flex;
      margin-bottom: 10%;
+     justify-content: space-between;
+     overflow: hidden;
 `;
 
 export const Card = styled.span`
-     margin-left: ${props => props.margin};
-     width:25%;
+     width:23%;
 `;
 
+export const ImageContainer = styled.img`
+     width: 100%;
+`;
 
 export const SmallCardTitle = styled.div`
      font-size: 17px;
@@ -73,3 +88,5 @@ export const LightText = styled.span`
      opacity: 0.5;
      margin-left: 1%;
 `;
+
+

@@ -6,7 +6,7 @@ export const SmoothScroller = styled.div`
 `;
 
 export const StyledSection = styled.section`
-     /* height: 500px; */
+     width: 100%;
 `;
 
 export const StyledTabContainer = styled.ul`
@@ -15,12 +15,12 @@ export const StyledTabContainer = styled.ul`
      padding-left: 0;
      margin-bottom: 0;
      justify-content: space-around;
-
+     width: 100%;
 `;
 
 export const StyledTab = styled.li`
      list-style: none;
-     
+
 `;
 
 export const A = styled.a`
@@ -43,9 +43,10 @@ export const HighLightLine = styled.hr`
 `;
 
 export const HorizontalLine = styled.hr`
-    
+     width: 167%;
      margin-top: 0;
      padding-top: 0;
+     
      
 `;
 

@@ -19,18 +19,18 @@ export const BrandName = styled.span`
  `;
 
 export const StyledNavItem = styled.div`
-height: 70px;
-width: 75px; /* width must be same size as NavBar to center */
-text-align: center; /* Aligns <a> inside of NavIcon div */
-margin-bottom: 0;   /* Puts space between NavItems */
-a {
-    font-size: 2.7em;
-    color: ${(props) => props.active ? "white" : "#9FFFCB"};
-    :hover {
-        opacity: 0.7;
-        text-decoration: none; /* Gets rid of underlining of icons */
-    }  
-}
+        height: 70px;
+        width: 75px; /* width must be same size as NavBar to center */
+        text-align: center; /* Aligns <a> inside of NavIcon div */
+        margin-bottom: 0;   /* Puts space between NavItems */
+        a {
+        font-size: 2.7em;
+        color: ${(props) => props.active ? "white" : "#9FFFCB"};
+                :hover {
+                        opacity: 0.7;
+                        text-decoration: none; /* Gets rid of underlining of icons */
+                }  
+        }
 `;
 
 
@@ -42,8 +42,12 @@ export const StyledSideNav = styled.div`
         background-color: ${props => props.color};
         overflow-x: hidden;     /* Disable horizontal scroll */
         
+        @media  (max-width: 768px) {
+                display: none;
+        } 
+        
         .side-icon{
-            margin-left: 100%;
+                margin-left: 100%;
         }
-
+        
 `;

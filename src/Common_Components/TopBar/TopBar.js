@@ -40,7 +40,6 @@ export default class TopBar extends React.Component {
 
           <TabName/>
 
-          <Navbar.Collapse id="basic-navbar-nav">
             <Nav className = "ml-auto">
               <Nav.Item>
                 <Nav.Link href="/" >
@@ -51,8 +50,7 @@ export default class TopBar extends React.Component {
                 </Nav.Link>
               </Nav.Item>
             </Nav>
-          </Navbar.Collapse>
-
+          
         </Navbar>
       </Header>
     );
