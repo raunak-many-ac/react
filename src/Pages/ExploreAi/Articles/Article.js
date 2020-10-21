@@ -80,7 +80,7 @@ export default class Article extends React.Component {
 
      render() {
         const {darkColor} = this.context;
-        console.log(darkColor);
+        
           return (
                <SmoothScroller>
 

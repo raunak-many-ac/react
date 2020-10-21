@@ -5,7 +5,7 @@ import OverviewCard from "./OverviewCard/OverviewCard";
 import Article from "./Articles/Article";
 import Recommendation from "./Recommendation/Recommendation";
 
-export class ExploreAi extends React.Component {
+export default class ExploreAi extends React.Component {
   render() {
     return (
       <Container>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import profile_image from "../../assets/profile.svg"
 
-import {CircularImage, LogOut, TabNameDiv, Header} from "./Styles";
+import { CircularImage, LogOut, TabNameDiv, Header } from "./Styles";
 
 
 export default class TopBar extends React.Component {
@@ -11,11 +11,11 @@ export default class TopBar extends React.Component {
     path: "/mydashboard"
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.setState(
-     {
-      path: window.location.pathname
-     }
+      {
+        path: window.location.pathname
+      }
     )
   }
 
@@ -29,8 +29,14 @@ export default class TopBar extends React.Component {
           <TabNameDiv> My dashboard </TabNameDiv>
         );
 
+      if (this.state.path.localeCompare("/exploreai") == 0)
+        return (
+          <TabNameDiv> Explore Ai </TabNameDiv>
+        );
+
+
       return (
-        <TabNameDiv> Explore Ai </TabNameDiv>
+        <TabNameDiv> Contact Us </TabNameDiv>
       );
     }
 
@@ -38,19 +44,19 @@ export default class TopBar extends React.Component {
       <Header>
         <Navbar expand="lg">
 
-          <TabName/>
+          <TabName />
 
-            <Nav className = "ml-auto">
-              <Nav.Item>
-                <Nav.Link href="/" >
+          <Nav className="ml-auto">
+            <Nav.Item>
+              <Nav.Link href="/" >
 
-                  <CircularImage src={profile_image} />
-                  <LogOut>LogOut</LogOut>
+                <CircularImage src={profile_image} />
+                <LogOut>LogOut</LogOut>
 
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+
         </Navbar>
       </Header>
     );

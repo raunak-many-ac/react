@@ -9,6 +9,14 @@ import ArticlesTab from "./Tabs/Articles_Tab/ArticlesTab";
 import NewsTab from "./Tabs/News_Tab/NewsTab";
 
 
+
+const apicheck = async() => {
+  console.log("apicheck()...")
+   const url = "https://new-rect-app.firebaseio.com/dashboard.json";
+   const response = await fetch(url);
+   const data = response.json();
+   console.log(data);
+}
 export default class MyDashboard extends React.Component {
 
   constructor(props) {
@@ -24,7 +32,7 @@ export default class MyDashboard extends React.Component {
 
   render() {
 
-
+    apicheck();
     return (
       <Container>
 

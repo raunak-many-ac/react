@@ -31,8 +31,8 @@ class SideNav extends React.Component {
                     key: 2
                 },
                 {
-                    path: '/NoMatch',
-                    name: 'NoMatch',
+                    path: '/contactus',
+                    name: 'Contact Us',
                     css: 'fas fa-hashtag',
                     key: 3
                 },
@@ -59,8 +59,7 @@ class SideNav extends React.Component {
                         if (item.name.localeCompare("My Dashboard") == 0)
                             return (<MyDashboardIcon
                                 path={item.path}
-                                name={item.name}
-                                css={item.css}
+                                name={item.name}                                
                                 onItemClick={this.onItemClick}
                                 active={item.path === activePath || item.path === "/"}
                                 key={item.key}
@@ -70,20 +69,18 @@ class SideNav extends React.Component {
                             return (
                                 <CaseStudyIcon
                                     path={item.path}
-                                    name={item.name}
-                                    css={item.css}
+                                    name={item.name}                                  
                                     onItemClick={this.onItemClick}
                                     active={item.path === activePath}
                                     key={item.key}
                                 />
                             );
 
-                        if(item.name.localeCompare("NoMatch") == 0 )    
+                        if(item.name.localeCompare("Contact Us") == 0 )    
                             return (
                                 <ContactUsIcon
                                     path={item.path}
                                     name={item.name}
-                                    css={item.css}
                                     onItemClick={this.onItemClick}
                                     active={item.path === activePath}
                                     key={item.key}
