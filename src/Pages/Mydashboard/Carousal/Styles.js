@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {css} from "@emotion/core";
 
 
 export const CarousalContainer = styled.div`
@@ -81,4 +82,17 @@ export const ViewCaseStudy = styled.div`
         color: ${props => props.color};
         font-weight: bold;
 
+`;
+
+
+//..Loading animation css from here
+export const LoaderContainer = styled.div`
+        width: 100%;
+        height: 350px;
+        display: flex;
+`;
+
+export const loaderCss = css`
+        margin-top: 20%;
+        margin-left: 40%;
 `;

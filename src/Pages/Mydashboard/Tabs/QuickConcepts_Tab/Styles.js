@@ -1,5 +1,7 @@
 
 import styled from 'styled-components';
+import {css} from "@emotion/core";
+
 
 export const WideCardContainer = styled.div`
      display: flex;
@@ -69,6 +71,7 @@ export const Card = styled.span`
 
 export const ImageContainer = styled.img`
      width: 100%;
+     /* src: url(${props => props.image}); */
 `;
 
 export const SmallCardTitle = styled.div`
@@ -90,3 +93,14 @@ export const LightText = styled.span`
 `;
 
 
+//..Loading animation css from here
+export const LoaderContainer = styled.div`
+        width: 100%;
+        height: 350px;
+        display: flex;
+`;
+
+export const loaderCss = css`
+        margin-top: 20%;
+        margin-left: 40%;
+`;

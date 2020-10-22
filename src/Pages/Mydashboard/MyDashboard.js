@@ -11,30 +11,10 @@ import QuickConceptsTab from "./Tabs/QuickConcepts_Tab/QuickConceptsTab";
 import ArticlesTab from "./Tabs/Articles_Tab/ArticlesTab";
 import NewsTab from "./Tabs/News_Tab/NewsTab";
 
-//..firebase
-import firebase from "../../firebase";
-
 //..redux
 import {connect} from "react-redux";
 
-const apicheck = async () => {
-  console.log("apicheck()...");
-
-  var db = firebase.firestore();
-  var docRef = db.collection("mydashboard").doc("data");
-
-  docRef.get().then(function (doc) {
-    if (doc.exists) {
-      console.log("Document data:", doc.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
-  }).catch(function (error) {
-    console.log("Error getting document:", error);
-  });
-}
-
+import {fetchFromFirebase, deleteFunc} from "../../Store/action.js";
 
 class MyDashboard extends React.Component {
 
@@ -49,20 +29,27 @@ class MyDashboard extends React.Component {
     this.setState({ selected: tab });
   }
 
-  render() {
+  componentWillUnmount(){
+    console.log("dashboard unmounterd");
+    this.props.deleteFunc();
+  }
 
-    // apicheck();
-    console.log(this.props);
+  render() {
+    // console.log(this.props);
+    if(this.props.carousal == undefined){
+      this.props.fetchFromFirebase(); 
+    }
+
     return (
       <Container>
 
-        <Carousal />
+        <Carousal data = {this.props.carousal}/>
 
         <HorizontalLine />
 
         <TabNav tabs={["Quick Concepts", "Articles", "News"]} selected={this.state.selected} setSelected={this.setSelected} >
           <Tab isSelected={this.state.selected === "Quick Concepts"}  >
-            <QuickConceptsTab />
+            <QuickConceptsTab wideCards = {this.props.wideCards} cards = {this.props.cards}/>
           </Tab>
           <Tab isSelected={this.state.selected === "Articles"} >
             <ArticlesTab />
@@ -79,10 +66,19 @@ class MyDashboard extends React.Component {
 } 
 
 const mapStateToProps = (state) =>{
+
   return{
-    carousal: state.carousal
+    carousal: state.carousal,
+    wideCards: state.wideCards,
+    cards: state.cards
   }
 }
 
-// export default connect(mapStateToProps)(MyDashboard);
-export default MyDashboard;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteFunc: () => dispatch(deleteFunc()), //..when we will unmount then we will delete all the data from the server
+    fetchFromFirebase: () => dispatch(fetchFromFirebase()) //..to get data from the firestore 
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyDashboard);

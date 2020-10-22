@@ -4,21 +4,21 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import ThemeProvider from "./Theme";
-import store from "./redux_store/store";
+import store from "./Store/store";
 import {Provider} from "react-redux";
 
-
 ReactDOM.render(
-  
+  <Provider store = {store}>
   <BrowserRouter>
 
     <ThemeProvider>
-      <App />     
+      <App />
+      
       
     </ThemeProvider>
 
   </BrowserRouter>
-  ,
+  </Provider>,
   
   document.getElementById('root')
 );

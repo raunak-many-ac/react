@@ -111,7 +111,9 @@ class Contact extends React.Component {
             name: this.data.name,
             subject: this.data.subject,
             message: this.data.message
-        });
+        }).then(
+            alert("We received your message....")
+        )
     }
 }
 
