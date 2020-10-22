@@ -2,9 +2,6 @@ import React from 'react';
 
 import { StyledTabContainer, ActiveTab, InactiveTab } from "./TabStyles";
 
-
-
-
 class TabNav extends React.Component {
         render() {
                 return (

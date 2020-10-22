@@ -31,47 +31,46 @@ export default class Carousal extends React.Component {
     }]
   };
 
+  data =  [
+    {
+      feature: "Featured1",
+      title: "Role of Ai in huimanizing Digital banking",
+    },
+    {
+      feature: "Featured2",
+      title: "Role of Ai in huimanizing Digital banking",
+    },
+    {
+      feature: "Featured3",
+      title: "Role of Ai in huimanizing Digital banking",
+    }
+  ]
+  
+
   render() {
 
     const { darkColor } = this.context;
-
-
     return (
         <CarousalContainer>
           <Slider {...this.settings}>
 
-            <SliderItem>
-              <SliderText>
+            {
+              this.data.map(slide => {
+               return(
+                <SliderItem>
+                  <SliderText>
 
-                <FeatureText>Featured1</FeatureText>
-                <SliderTitle>Role of Ai in huimanizing Digital banking</SliderTitle>
-                <ViewCaseStudy color={darkColor}>View Case study <ArrowRight /> </ViewCaseStudy>
+                    <FeatureText>{slide.feature}</FeatureText>
+                    <SliderTitle>{slide.title}</SliderTitle>
+                    <ViewCaseStudy color={darkColor}>View Case study <ArrowRight /> </ViewCaseStudy>
 
-              </SliderText>
-              <SliderImage src={profile} />
-            </SliderItem>
-
-            <SliderItem>
-              <SliderText>
-
-                <FeatureText>Featured2</FeatureText>
-                <SliderTitle>Role of Ai in huimanizing Digital banking</SliderTitle>
-                <ViewCaseStudy color={darkColor}>View Case study <ArrowRight /> </ViewCaseStudy>
-
-              </SliderText>
-              <SliderImage src={profile} />
-            </SliderItem>
-
-            <SliderItem>
-              <SliderText>
-
-                <FeatureText>Featured3</FeatureText>
-                <SliderTitle>Role of Ai in huimanizing Digital banking</SliderTitle>
-                <ViewCaseStudy color={darkColor}>View Case study <ArrowRight/> </ViewCaseStudy>
-
-              </SliderText>
-              <SliderImage src={profile} />
-            </SliderItem>
+                  </SliderText>
+                  <SliderImage src={profile} />
+                </SliderItem>
+               )
+              })
+            }
+            
 
           </Slider>
         </CarousalContainer>        

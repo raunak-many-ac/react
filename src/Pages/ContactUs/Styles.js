@@ -11,7 +11,8 @@ export const Location = styled.div`
     @media (min-width:1000px){
         display:flex;
     }    
-`
+`;
+
 export const Map = styled.div`
     width:100%;
     height:60%;
@@ -23,7 +24,8 @@ export const Map = styled.div`
         height:400px;
         width:71%;
     }    
-`
+`;
+
 export const OfficeBackground = styled.div`
     width:100%;
     height:60%;
@@ -51,7 +53,8 @@ export const OfficeBackground = styled.div`
         }
     }
     
-`
+`;
+
 export const OurOfficeText = styled.p`
         
         position: absolute;
@@ -68,7 +71,8 @@ export const OurOfficeText = styled.p`
         }
         
         
-`
+`;
+
 export const OfficeAddress = styled.div `
         position:absolute;
         color:white;
@@ -83,7 +87,8 @@ export const OfficeAddress = styled.div `
             margin-top:100px;
         }
         
-`
+`;
+
 export const AddressText = styled.p `
         
         color:white;
@@ -92,7 +97,8 @@ export const AddressText = styled.p `
         font-weight:bold;
         
         
-`
+`;
+
 export const ContactUsContainer = styled.div `
     padding-left:60px;
     padding-right:60px;
@@ -101,7 +107,8 @@ export const ContactUsContainer = styled.div `
             padding-left:10%;
             padding-right:10%;
         }
-`
+`;
+
 
 export const FindUsContainer = styled.div `
     
@@ -109,50 +116,55 @@ export const FindUsContainer = styled.div `
             width:33%;
     }
     
-`
+`;
+
 export const Title = styled.p `
     font-size:30px;
     margin-top:60px;
     margin-bottom:60px;
     
-`
+`;
+
 export const Description = styled.p `
     width:90%;
     line-height:30px;
-`
+`;
+
 export const ContactDetailsContainer = styled.div `
     display:flex;
     margin:30px 0;
     
-`
+`;
 export const Logo =styled.div `
     margin-right:20px;
     padding-top:3px;
-`
+`;
 
 export const SubTitle =styled.div `
     margin-bottom:10px;
     font-weight:bold;
-`
+`;
 
 export const Link =styled.a `
     text-decoration:none;
     color:#44b272;
-`
+`;
+
 export const UserContactDetails =styled.div `
     @media (min-width:1000px){
             display:flex;
             justify-content:center;
         }
-`
+`;
+
 export const ContactForm =styled.form `
-    /* box-sizing:border-box; */
     
     margin-bottom:60px;
     @media (min-width:1000px){
             width:65%;
     }
-`
+`;
+
 export const Input =styled.input `
     display:block;
     width:100%;
@@ -173,7 +185,7 @@ export const Input =styled.input `
         }
     }
     
-`
+`;
 
 
 export const MessageForm =styled.textarea `
@@ -185,10 +197,10 @@ export const MessageForm =styled.textarea `
     padding-left:20px;
     padding-top:20px;
     &::placeholder{
-        
         font-size:18px;
     }
-`
+`;
+
 export const SubmitButton = styled.button `
     width:200px;
     height:60px;
@@ -203,4 +215,4 @@ export const SubmitButton = styled.button `
         background:#44b272;
         cursor: pointer;
     }
-    `
+`;
