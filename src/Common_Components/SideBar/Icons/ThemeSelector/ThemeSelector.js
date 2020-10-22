@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Row, Red, Blue, Green, Purple, Container } from "./Styles";
+import { Red, Blue, Green, Purple, Container } from "./Styles";
 
 import { ThemeContext } from "../../../../Theme";
 
@@ -9,17 +9,17 @@ export default class ThemeSelector extends React.Component {
         static contextType = ThemeContext;
 
         render() {
+                const { lightestColor } = this.context;
                 return (
-                        <Container>
-                                <Row>
-                                        <Red onClick={this.redTheme} />
-                                        <Blue onClick={this.blueTheme} />
-                                </Row>
+                        <Container color={lightestColor}>
 
-                                <Row>
-                                        <Green onClick={this.greenTheme} />
-                                        <Purple onClick={this.purpleTheme} />
-                                </Row>
+                                <Red onClick={this.redTheme} />
+                                <Blue onClick={this.blueTheme} />
+                                <Green onClick={this.greenTheme} />
+                                <Purple onClick={this.purpleTheme} />
+
+
+
 
                         </Container>
                 );
