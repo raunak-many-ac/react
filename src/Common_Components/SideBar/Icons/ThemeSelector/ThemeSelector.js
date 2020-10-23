@@ -18,9 +18,6 @@ export default class ThemeSelector extends React.Component {
                                 <Green onClick={this.greenTheme} />
                                 <Purple onClick={this.purpleTheme} />
 
-
-
-
                         </Container>
                 );
         }

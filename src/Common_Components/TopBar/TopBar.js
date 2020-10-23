@@ -4,6 +4,8 @@ import profile_image from "../../assets/profile.svg"
 
 import { CircularImage, LogOut, TabNameDiv, Header } from "./Styles";
 
+import firebase from "../../firebase";
+
 
 export default class TopBar extends React.Component {
 
@@ -51,7 +53,7 @@ export default class TopBar extends React.Component {
               <Nav.Link href="/" >
 
                 <CircularImage src={profile_image} />
-                <LogOut>LogOut</LogOut>
+                <LogOut onClick = {this.logOut}>LogOut</LogOut>
 
               </Nav.Link>
             </Nav.Item>
@@ -60,6 +62,10 @@ export default class TopBar extends React.Component {
         </Navbar>
       </Header>
     );
+  }
+
+  logOut = () =>{
+    firebase.auth().signOut();
   }
 
 }

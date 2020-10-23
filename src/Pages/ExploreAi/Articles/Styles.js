@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import {css} from "@emotion/core";
+
 
 export const SmoothScroller = styled.div`
      scroll-behavior: smooth;
@@ -46,8 +48,18 @@ export const HorizontalLine = styled.hr`
      width: 167%;
      margin-top: 0;
      padding-top: 0;
-     
-     
+`;
+
+//..Loading animation css from here
+export const LoaderContainer = styled.div`
+        width: 100%;
+        height: 350px;
+        display: flex;
+`;
+
+export const loaderCss = css`
+        margin-top: 20%;
+        margin-left: 40%;
 `;
 
      

@@ -5,16 +5,48 @@ import OverviewCard from "./OverviewCard/OverviewCard";
 import Article from "./Articles/Article";
 import Recommendation from "./Recommendation/Recommendation";
 
-export default class ExploreAi extends React.Component {
+import {connect} from "react-redux";
+
+import {fetchFromFirebase, deleteFunc} from "../../Store/actions/caseStudyActions";
+
+
+
+class ExploreAi extends React.Component {
   render() {
+    
+    if(this.props.feature == undefined){
+      this.props.fetchFromFirebase();
+    }
+
     return (
-      <Container>
-        <OverviewCard/>
+      <Container >
+        <OverviewCard feature = {this.props.feature} title = {this.props.title} source = {this.props.source}/>
         <DetailContainer>
-          <Article/>
+          <Article article = {this.props.article}/>
           <Recommendation/>
         </DetailContainer>
       </Container>
     )
   }
 } 
+
+const mapStateToProps = (state) =>{
+
+  return{
+    feature: state.caseStudyReducer.feature,
+    source: state.caseStudyReducer.source,
+    title: state.caseStudyReducer.title,
+    article: state.caseStudyReducer.article
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteFunc: () => dispatch(deleteFunc()), //..when we will unmount then we will delete all the data from the server
+    fetchFromFirebase: () => dispatch(fetchFromFirebase()) //..to get data from the firestore 
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExploreAi);
+
+

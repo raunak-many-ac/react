@@ -1,8 +1,8 @@
 import {createStore, applyMiddleware} from "redux";
-import dashboardReducer from "./dashboardReducer";
+import globalReducer from "./globalReducer";
 import thunk from "redux-thunk";
 
 
-const store = createStore(dashboardReducer, applyMiddleware(thunk));
+const store = createStore(globalReducer, applyMiddleware(thunk));
 
 export default store;

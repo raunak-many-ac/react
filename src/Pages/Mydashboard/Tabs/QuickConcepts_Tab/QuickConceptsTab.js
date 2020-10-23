@@ -2,7 +2,6 @@ import React from 'react';
 import { RiseLoader } from "react-spinners";
 import { ThemeContext } from "../../../../Theme";
 
-
 import background from "../../../../assets/image_card_ml.svg";
 import img1 from "../../../../assets/image_quickconcepts_ml.png";
 import img2 from "../../../../assets/image_quickconcepts_ml2.png";

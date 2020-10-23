@@ -2,6 +2,8 @@ import React from 'react';
 import profile from "../../../assets/ai.png";
 import Slider from "react-slick";
 import {RiseLoader} from "react-spinners";
+import { NavLink } from "react-router-dom";
+
 
 import { ThemeContext } from "../../../Theme";
 
@@ -67,7 +69,7 @@ export default class Carousal extends React.Component {
 
                     <FeatureText>{slide.feature}</FeatureText>
                     <SliderTitle>{slide.title}</SliderTitle>
-                    <ViewCaseStudy color={darkColor}>View Case study <ArrowRight /> </ViewCaseStudy>
+                    <NavLink to = "/exploreai"><ViewCaseStudy color={darkColor}>View Case study <ArrowRight/> </ViewCaseStudy></NavLink>
 
                   </SliderText>
                   <SliderImage src={profile} />

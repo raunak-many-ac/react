@@ -14,7 +14,7 @@ import NewsTab from "./Tabs/News_Tab/NewsTab";
 //..redux
 import {connect} from "react-redux";
 
-import {fetchFromFirebase, deleteFunc} from "../../Store/action.js";
+import {fetchFromFirebase, deleteFunc} from "../../Store/actions/action.js";
 
 class MyDashboard extends React.Component {
 
@@ -66,11 +66,10 @@ class MyDashboard extends React.Component {
 } 
 
 const mapStateToProps = (state) =>{
-
   return{
-    carousal: state.carousal,
-    wideCards: state.wideCards,
-    cards: state.cards
+    carousal: state.dashboardReducer.carousal,
+    wideCards: state.dashboardReducer.wideCards,
+    cards: state.dashboardReducer.cards
   }
 }
 

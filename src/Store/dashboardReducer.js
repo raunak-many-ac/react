@@ -3,12 +3,10 @@ const initState = {
 
 };
 
-
-
 const dashboardReducer = (state = initState, actions) => {
-  console.log(actions);
+  
   if(actions.type == "SAVE_DASHBOARD_DATA"){
-    console.log(actions.data);
+    
     return {
       ...state,
       carousal: actions.data.carousal,
@@ -17,6 +15,7 @@ const dashboardReducer = (state = initState, actions) => {
     }
   }
 
+  //..set "state" to be an empty object
   if(actions.type == "DELETE_ALL"){
     return {
       
