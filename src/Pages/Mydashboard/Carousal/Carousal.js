@@ -3,8 +3,7 @@ import profile from "../../../assets/ai.png";
 import Slider from "react-slick";
 import {RiseLoader} from "react-spinners";
 import { NavLink } from "react-router-dom";
-
-
+import { withRouter } from "react-router-dom";
 import { ThemeContext } from "../../../Theme";
 
 import { CarousalContainer, SliderText, SliderImage, SliderItem, FeatureText, SliderTitle, ViewCaseStudy  } from "./Styles";
@@ -12,7 +11,7 @@ import {LoaderContainer, loaderCss} from "./Styles";
 
 import ArrowRight from "./Arrow_Right";
 
-export default class Carousal extends React.Component {
+class Carousal extends React.Component {
 
   static contextType = ThemeContext;
 
@@ -39,14 +38,22 @@ export default class Carousal extends React.Component {
 
   data =  [
     
-  ]
-  
+  ]  
+
+  goToCaseStudyPage = (id) => {
+    console.log("here is the id of the slide "+id);
+
+    this.props.history.push({
+      pathname: "/casestudy", 
+      state: id
+    })
+  }
 
   render() {
 
     const { darkColor } = this.context;
-    // console.log(this.props.carousal);
-    if(this.props.data == undefined)
+    
+    if(!this.props.data)
     {
       return(
         <LoaderContainer>
@@ -54,33 +61,41 @@ export default class Carousal extends React.Component {
         </LoaderContainer>
       );
     }
-
+    
     this.data = this.props.data;
-
+    console.log(this.data);
     return (
         <CarousalContainer>
           <Slider {...this.settings}>
 
             {
-              this.data.map(slide => {
+              this.props.data.map(slide => {
+                
+               console.log("id == "+slide.id);
                return(
                 <SliderItem>
                   <SliderText>
 
                     <FeatureText>{slide.feature}</FeatureText>
                     <SliderTitle>{slide.title}</SliderTitle>
-                    <NavLink to = "/exploreai"><ViewCaseStudy color={darkColor}>View Case study <ArrowRight/> </ViewCaseStudy></NavLink>
+
+                    <div onClick = {() => this.goToCaseStudyPage(slide.id)}>
+                      <ViewCaseStudy color = {darkColor}>View Case study <ArrowRight/> </ViewCaseStudy>
+                    </div>
 
                   </SliderText>
                   <SliderImage src={profile} />
                 </SliderItem>
                )
               })
-            }
-            
+            }            
 
           </Slider>
         </CarousalContainer>        
     )
   }
 } 
+
+export default withRouter(Carousal);
+
+//..to = {{pathname: "/casestudy", state: id}}

@@ -33,8 +33,20 @@ export const WideCard = styled.div`
 
 export const FeatureText = styled.div`
         color: grey;
-        font-family: Helvetica;      
-        margin-top: 10%;  
+        font-family: Helvetica;     
+`;
+
+export const ExploreButton = styled.div`
+     width: auto;
+     height: 20%;
+     border: none;
+     padding-left: 10px;
+     padding-right: 10px;
+     padding-top: 5px;
+     padding-bottom: 5px;
+     background-color: white;
+     border-radius: 8px;
+     font-weight: bold;
 `;
 
 export const LargeCardTitle = styled.div`
@@ -54,6 +66,10 @@ export const TextContainer = styled.div`
 
 export const BottomCardContainer = styled.div`
      width: 100%;
+     margin-top: 25%;
+     display: flex;
+     justify-content: space-between;
+     padding-right: 20%;
 `;
 
 export const HorizontalCardContainer = styled.div`

@@ -1,8 +1,9 @@
 import React from 'react';
 import { ThemeContext } from "../../../Theme";
-import { SmoothScroller, StyledSection, StyledTabContainer, StyledTab, A, HighLightLine, HorizontalLine } from "./Styles";
+import { SmoothScroller, StyledSection, StyledTabContainer, StyledTab, A, HighLightLine, HorizontalLine, P } from "./Styles";
 import { LoaderContainer, loaderCss } from "./Styles";
 import { RiseLoader } from "react-spinners";
+
 
 //..converts array of paragraphs to <p> elements
 const Paragraph = (props) => {
@@ -10,7 +11,7 @@ const Paragraph = (props) => {
           <div>
                {
                     props.paragraphs.map((paragraph =>
-                         <p>{paragraph}</p>
+                         <P>{paragraph}</P>
                     ))
 
                }
@@ -39,7 +40,7 @@ export default class Article extends React.Component {
           const { darkColor } = this.context;
 
           //..if there is no data passed show loading spinner
-          if (this.props.article == undefined) { 
+          if (!this.props.article) { 
                return (
                     <LoaderContainer>
                          <RiseLoader css={loaderCss} size={20} color={darkColor} loading />

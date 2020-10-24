@@ -101,7 +101,7 @@ class Contact extends React.Component {
     }
 
     send = (event) => {
-        // e.preventDefault();
+        
         event.preventDefault();
         console.log("sending... name = "+this.data.name);
         

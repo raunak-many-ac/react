@@ -6,16 +6,18 @@ import Article from "./Articles/Article";
 import Recommendation from "./Recommendation/Recommendation";
 
 import {connect} from "react-redux";
-
 import {fetchFromFirebase, deleteFunc} from "../../Store/actions/caseStudyActions";
 
 
 
-class ExploreAi extends React.Component {
+class CaseStudy extends React.Component {
+
   render() {
+    console.log(this.props.location);
     
     if(this.props.feature == undefined){
-      this.props.fetchFromFirebase();
+      const caseStudyId = this.props.location.state;
+      this.props.fetchFromFirebase(caseStudyId);
     }
 
     return (
@@ -28,6 +30,7 @@ class ExploreAi extends React.Component {
       </Container>
     )
   }
+
 } 
 
 const mapStateToProps = (state) =>{
@@ -43,10 +46,10 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) => {
   return {
     deleteFunc: () => dispatch(deleteFunc()), //..when we will unmount then we will delete all the data from the server
-    fetchFromFirebase: () => dispatch(fetchFromFirebase()) //..to get data from the firestore 
+    fetchFromFirebase: (docName) => dispatch(fetchFromFirebase(docName)) //..to get data from the firestore 
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExploreAi);
+export default connect(mapStateToProps, mapDispatchToProps)(CaseStudy);
 
 

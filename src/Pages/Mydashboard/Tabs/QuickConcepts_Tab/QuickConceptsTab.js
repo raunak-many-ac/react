@@ -9,7 +9,7 @@ import img3 from "../../../../assets/image_quickconcepts_ml3.png";
 import img4 from "../../../../assets/image_quickconcepts_ml4.png";
 
 import { WideCardContainer, WideCard, TextContainer, FeatureText, LargeCardTitle, BottomCardContainer } from "./Styles";
-import { HorizontalCardContainer, Card, SmallCardTitle, TimeToRead, LightText, ImageContainer } from "./Styles";
+import { HorizontalCardContainer, Card, SmallCardTitle, TimeToRead, LightText, ImageContainer, ExploreButton } from "./Styles";
 
 import { LoaderContainer, loaderCss } from "./Styles";
 
@@ -27,7 +27,7 @@ class QuickConceptsTab extends React.Component {
      render() {
           const { darkColor } = this.context;
 
-          console.log(this.props);
+          // console.log(this.props);
           if (this.props.cards == undefined) {
                return (
                     <LoaderContainer>
@@ -49,7 +49,7 @@ class QuickConceptsTab extends React.Component {
                                         <TextContainer>
                                              <FeatureText>{item.feature}</FeatureText>
                                              <LargeCardTitle>{item.title}</LargeCardTitle>
-                                             <BottomCardContainer><FeatureText>{item.time + " read"}</FeatureText></BottomCardContainer>
+                                             <BottomCardContainer><FeatureText>{item.time + " read"}</FeatureText><ExploreButton>Explore</ExploreButton></BottomCardContainer>
                                         </TextContainer>
                                    </WideCard>
 

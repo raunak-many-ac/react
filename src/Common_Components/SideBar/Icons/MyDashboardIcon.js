@@ -34,6 +34,7 @@ export default class MyDashboardIcon extends Component {
         
                                                 </Link>
                                         </StyledNavItem>
+                                        
                                         );
                                 }}</ThemeContext.Consumer>
                                         

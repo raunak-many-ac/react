@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import profile_image from "../../assets/profile.svg"
+import profile_image from "../../assets/profile.png"
 
 import { CircularImage, LogOut, TabNameDiv, Header } from "./Styles";
 
@@ -31,9 +31,9 @@ export default class TopBar extends React.Component {
           <TabNameDiv> My dashboard </TabNameDiv>
         );
 
-      if (this.state.path.localeCompare("/exploreai") == 0)
+      if (this.state.path.localeCompare("/casestudy") == 0)
         return (
-          <TabNameDiv> Explore Ai </TabNameDiv>
+          <TabNameDiv> Case Study </TabNameDiv>
         );
 
 

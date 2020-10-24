@@ -4,23 +4,23 @@ import firebase from "../../firebase";
 export const fetchFromFirebase = () => {
      return (dispatch, getState) => {
           //..make async call
-          console.log("Hi from action.js...")
+          // console.log("Hi from action.js...")
           fetchMyDashboardData(dispatch);         
      }
 }
 
 const fetchMyDashboardData = async (dispatch) => {
-     console.log("apicheck()...");
+     
 
      var db = firebase.firestore();
      var docRef = db.collection("mydashboard").doc("data");
 
      docRef.get().then(function (doc) {
-          if (doc.exists) {
-               console.log("Document data:", doc.data());
-          } else {
-               console.log("No mydashboard document!");
-          }
+          // if (doc.exists) {
+          //      console.log("Document data:", doc.data());
+          // } else {
+          //      console.log("No mydashboard document!");
+          // }
 
           dispatch({
                type: "SAVE_DASHBOARD_DATA",

@@ -14,7 +14,7 @@ import NewsTab from "./Tabs/News_Tab/NewsTab";
 //..redux
 import {connect} from "react-redux";
 
-import {fetchFromFirebase, deleteFunc} from "../../Store/actions/action.js";
+import {fetchFromFirebase, deleteFunc} from "../../Store/actions/dashboardAction";
 
 class MyDashboard extends React.Component {
 

@@ -5,7 +5,6 @@ import { Logo, BrandName, StyledSideNav } from "./Styles.js";
 
 import MyDashboardIcon from "./Icons/MyDashboardIcon";
 import ContactUsIcon from "./Icons/ContactUsIcon";
-import CaseStudyIcon from "./Icons/CaseStudyIcon";
 import ThemeSelector from  "./Icons/ThemeSelector/ThemeSelector";
 import {ThemeContext} from "../../Theme";
 
@@ -23,12 +22,6 @@ class SideNav extends React.Component {
                     name: "My Dashboard",
                     css: "fa fa-fw fa-hom",
                     key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
-                },
-                {
-                    path: "/exploreai",
-                    name: "Case Study",
-                    css: "fa fa-fw fa-clock",
-                    key: 2
                 },
                 {
                     path: "/contactus",
@@ -52,8 +45,9 @@ class SideNav extends React.Component {
         return (
             <StyledSideNav color= {lightestColor}>
 
-                <Logo src={logo} height="65px" width="50px" />
+                <Logo src={logo} />
                 <BrandName color= {text_color}> SBG.ai</BrandName>
+
                 {
                     items.map((item) => {
                         if (item.name.localeCompare("My Dashboard") == 0)
@@ -65,16 +59,6 @@ class SideNav extends React.Component {
                                 key={item.key}
                             />);
 
-                        if(item.name.localeCompare("Case Study") == 0 )    
-                            return (
-                                <CaseStudyIcon
-                                    path={item.path}
-                                    name={item.name}                                  
-                                    onItemClick={this.onItemClick}
-                                    active={item.path === activePath}
-                                    key={item.key}
-                                />
-                            );
 
                         if(item.name.localeCompare("Contact Us") == 0 )    
                             return (

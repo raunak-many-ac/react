@@ -1,25 +1,25 @@
 import firebase from "../../firebase";
 
-export const fetchFromFirebase = () => {
+export const fetchFromFirebase = (docName) => {
      return (dispatch, getState) => {
           //..make async call
-          console.log("Hi from action.js...")
-          fetchMyDashboardData(dispatch);         
+          // console.log("Hi from action.js...")
+          
+          fetchMyDashboardData(dispatch, docName);         
      }
 }
 
-const fetchMyDashboardData = async (dispatch) => {
-     console.log("apicheck()...");
+const fetchMyDashboardData = async (dispatch, docName) => {
 
      var db = firebase.firestore();
-     var docRef = db.collection("Case Studies").doc("case study 1");
+     var docRef = db.collection("Case Studies").doc(docName);
 
      docRef.get().then(function (doc) {
-          if (doc.exists) {
-               console.log("Document data:", doc.data());
-          } else {
-               console.log("No mydashboard document!");
-          }
+          // if (doc.exists) {
+          //      console.log("Document data:", doc.data());
+          // } else {
+          //      console.log("No mydashboard document!");
+          // }
 
           dispatch({
                type: "SAVE_VIEWCASESTUDY_DATA",
