@@ -15,18 +15,16 @@ class SideNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activePath: props.location.pathname,
+            activePath:  "/mydashboard",
             items: [
                 {
                     path: "/mydashboard", /* path is used as id to check which NavItem is active basically */
                     name: "My Dashboard",
-                    css: "fa fa-fw fa-hom",
                     key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
                 },
                 {
                     path: "/contactus",
                     name: "Contact Us",
-                    css: "fas fa-hashtag",
                     key: 3
                 },
             ]
@@ -71,13 +69,6 @@ class SideNav extends React.Component {
 
                                 />
                             );
-                        return (<MyDashboardIcon
-                            path={item.path}
-                            name={item.name}
-                            onItemClick={this.onItemClick}
-                            active={item.path === activePath || item.path === "/"}
-                            key={item.key}
-                        />);
                     })
                 }
 

@@ -89,9 +89,7 @@ export const P = styled.p`
      font-size: 14px;
     line-height: 1.57;
     color: rgb(60, 64, 114);
-`;
-
-     
+`;   
 
 
 

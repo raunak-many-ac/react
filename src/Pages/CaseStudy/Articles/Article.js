@@ -76,7 +76,7 @@ export default class Article extends React.Component {
 
                     <VideoPlayerContainer>
                          <StyledSection>
-                              <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width="100%"  />
+                              <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width="100%" />
                          </StyledSection>
                     </VideoPlayerContainer>
 
@@ -97,3 +97,5 @@ export default class Article extends React.Component {
 
 
 } 
+
+//.C:\Program Files\nodejs
