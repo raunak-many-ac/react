@@ -5,8 +5,8 @@ import { Logo, BrandName, StyledSideNav } from "./Styles.js";
 
 import MyDashboardIcon from "./Icons/MyDashboardIcon";
 import ContactUsIcon from "./Icons/ContactUsIcon";
-import ThemeSelector from  "./Icons/ThemeSelector/ThemeSelector";
-import {ThemeContext} from "../../Theme";
+import ThemeSelector from "./Icons/ThemeSelector/ThemeSelector";
+import { ThemeContext } from "../../Theme";
 
 
 class SideNav extends React.Component {
@@ -38,29 +38,29 @@ class SideNav extends React.Component {
     }
 
     render() {
-        
+
         const { items, activePath } = this.state;
-        const {lightestColor, text_color} = this.context;
+        const { lightestColor, text_color } = this.context;
 
         return (
-            <StyledSideNav color= {lightestColor}>
+            <StyledSideNav color={lightestColor}>
 
                 <Logo src={logo} />
-                <BrandName color= {text_color}> SBG.ai</BrandName>
+                <BrandName color={text_color}> SBG.ai</BrandName>
 
                 {
                     items.map((item) => {
                         if (item.name.localeCompare("My Dashboard") == 0)
                             return (<MyDashboardIcon
                                 path={item.path}
-                                name={item.name}                                
+                                name={item.name}
                                 onItemClick={this.onItemClick}
                                 active={item.path === activePath || item.path === "/"}
                                 key={item.key}
                             />);
 
 
-                        if(item.name.localeCompare("Contact Us") == 0 )    
+                        if (item.name.localeCompare("Contact Us") == 0)
                             return (
                                 <ContactUsIcon
                                     path={item.path}
@@ -68,13 +68,20 @@ class SideNav extends React.Component {
                                     onItemClick={this.onItemClick}
                                     active={item.path === activePath}
                                     key={item.key}
-                                    
+
                                 />
-                            );        
+                            );
+                        return (<MyDashboardIcon
+                            path={item.path}
+                            name={item.name}
+                            onItemClick={this.onItemClick}
+                            active={item.path === activePath || item.path === "/"}
+                            key={item.key}
+                        />);
                     })
                 }
 
-                <ThemeSelector/>    
+                <ThemeSelector />
             </StyledSideNav>
         );
     }

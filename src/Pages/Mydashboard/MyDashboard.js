@@ -29,14 +29,16 @@ class MyDashboard extends React.Component {
     this.setState({ selected: tab });
   }
 
+  //..when component unmounts the data must be cleared from redux
   componentWillUnmount(){
-    console.log("dashboard unmounterd");
     this.props.deleteFunc();
   }
 
   render() {
-    // console.log(this.props);
-    if(this.props.carousal == undefined){
+    
+    //..if data is not available fetchFromFirebase()
+    if(!this.props.carousal){
+      
       this.props.fetchFromFirebase(); 
     }
 
@@ -65,19 +67,25 @@ class MyDashboard extends React.Component {
   }
 } 
 
+//..takes state from redux and maps it to props
 const mapStateToProps = (state) =>{
+
   return{
     carousal: state.dashboardReducer.carousal,
     wideCards: state.dashboardReducer.wideCards,
     cards: state.dashboardReducer.cards
   }
+
 }
 
+//..maps dispatch Functions to props
 const mapDispatchToProps = (dispatch) => {
+
   return {
-    deleteFunc: () => dispatch(deleteFunc()), //..when we will unmount then we will delete all the data from the server
-    fetchFromFirebase: () => dispatch(fetchFromFirebase()) //..to get data from the firestore 
+    deleteFunc: () => dispatch(deleteFunc()), //..when we will unmount, we will delete all the data from redux
+    fetchFromFirebase: () => dispatch(fetchFromFirebase()) //..to fetch data from the firestore 
   }
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyDashboard);

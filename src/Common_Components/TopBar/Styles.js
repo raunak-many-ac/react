@@ -22,6 +22,7 @@ export const TabNameDiv = styled.span`
     background: none;
     outline:none;
     color: grey; 
+    white-space: nowrap;
 
     @media (max-width: 768px){
         margin-left: 5%;
@@ -32,6 +33,16 @@ export const Header = styled.div`
     background-color: #fff; 
     margin-left: 14%;
     padding-right: 10%;
+
+    @media (max-width: 1400px){
+        width: 85%;
+        padding-right: 0%;
+    }
+
+    @media (max-width: 1000px){
+        
+        padding-right: 0em;
+    }
 
     @media (max-width: 768px){
         margin-left: 0%;

@@ -1,8 +1,10 @@
 import React from 'react';
 import { ThemeContext } from "../../../Theme";
 import { SmoothScroller, StyledSection, StyledTabContainer, StyledTab, A, HighLightLine, HorizontalLine, P } from "./Styles";
-import { LoaderContainer, loaderCss } from "./Styles";
+import { LoaderContainer, loaderCss, VideoPlayerContainer } from "./Styles";
 import { RiseLoader } from "react-spinners";
+
+import ReactPlayer from 'react-player/youtube'
 
 
 //..converts array of paragraphs to <p> elements
@@ -40,7 +42,7 @@ export default class Article extends React.Component {
           const { darkColor } = this.context;
 
           //..if there is no data passed show loading spinner
-          if (!this.props.article) { 
+          if (!this.props.article) {
                return (
                     <LoaderContainer>
                          <RiseLoader css={loaderCss} size={20} color={darkColor} loading />
@@ -52,6 +54,8 @@ export default class Article extends React.Component {
 
           return (
                <SmoothScroller>
+
+
 
                     <StyledTabContainer>
                          {
@@ -70,17 +74,22 @@ export default class Article extends React.Component {
 
                     <HorizontalLine />
 
+                    <VideoPlayerContainer>
+                         <StyledSection>
+                              <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width="100%"  />
+                         </StyledSection>
+                    </VideoPlayerContainer>
+
                     {
                          article.map((tab => {
                               return (
                                    <StyledSection id={tab.tabname}>
                                         <h2>{tab.title}</h2>
                                         <Paragraph paragraphs={tab.paragraphs} />
-
                                    </StyledSection>
                               )
                          }))
-                    }                    
+                    }
 
                </SmoothScroller>
           )

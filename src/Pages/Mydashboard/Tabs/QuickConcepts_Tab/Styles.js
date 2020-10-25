@@ -15,20 +15,89 @@ export const WideCard = styled.div`
      background-color: aliceblue;
      width: 50%;
      height: 250px;
+     padding-top:2%;
+     padding-bottom: 5%;
      margin-left: ${props => props.margin};
      background-image: url(${props => props.src});
      background-repeat: no-repeat;
-     background-position: left 4em top;
+     background-position: left 90px top;
+     
      background-size: 100% 100%;
      border-radius: 20px;
      overflow: hidden;
+
+     @media (max-width: 1300px){
+          background-position: left 80px top;
+     }
+
+     @media (max-width: 1250px){
+          background-position: left 73px top;
+     }
+
+     @media (max-width: 1200px){
+          background-position: left 63px top;
+     }
+
+     @media (max-width: 1150px){
+          background-position: left 53px top;
+     }
+
+     @media (max-width: 1100px){
+          background-position: left 43px top;
+     }
+
+     @media (max-width: 1050px){
+          background-position: left 33px top;
+     }
+
+     @media (max-width: 975px){
+          background-position: left 23px top;
+     }
+
+     @media (max-width: 900px){
+          background-position: left 15px top;
+     }
+
+     @media (max-width: 850px){
+          background-position: left 10px top;
+     }
+
+     @media (max-width: 820px){
+          background-position: left 4px top;
+     }
+
+     @media (max-width: 800px){
+          background-position: left 0px top;
+     }
 
      @media (max-width: 768px){
           width: 100%;
           margin-left: 0px;
           margin-top: 5%;
-
+          background-position: left 150px top;
      }
+
+     @media (max-width: 700px){
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 5%;
+          background-position: left 130px top;
+     }
+
+     @media (max-width: 650px){
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 5%;
+          background-position: left 100px top;
+     }
+
+     @media (max-width: 570px){
+          width: 100%;
+          margin-left: 0px;
+          margin-top: 5%;
+          background-position: left 70px top;
+     }
+
 `;
 
 export const FeatureText = styled.div`
@@ -42,8 +111,8 @@ export const ExploreButton = styled.div`
      border: none;
      padding-left: 10px;
      padding-right: 10px;
-     padding-top: 5px;
-     padding-bottom: 5px;
+     padding-top: 3px;
+     padding-bottom: 3px;
      background-color: white;
      border-radius: 8px;
      font-weight: bold;
@@ -66,10 +135,10 @@ export const TextContainer = styled.div`
 
 export const BottomCardContainer = styled.div`
      width: 100%;
-     margin-top: 25%;
+     margin-top: 15%;
      display: flex;
      justify-content: space-between;
-     padding-right: 20%;
+     padding-right: 10%;
 `;
 
 export const HorizontalCardContainer = styled.div`

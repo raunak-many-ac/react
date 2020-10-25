@@ -16,8 +16,10 @@ class CaseStudy extends React.Component {
     console.log(this.props.location);
     
     if(this.props.feature == undefined){
+      
       const caseStudyId = this.props.location.state;
-      this.props.fetchFromFirebase(caseStudyId);
+
+      this.props.fetchFromFirebase("case study 1");
     }
 
     return (
