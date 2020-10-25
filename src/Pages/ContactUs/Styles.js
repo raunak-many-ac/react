@@ -100,8 +100,8 @@ export const AddressText = styled.p `
 `;
 
 export const ContactUsContainer = styled.div `
-    padding-left:60px;
     padding-right:60px;
+
     @media (min-width:1000px){
             display:flex;
             padding-left:10%;
@@ -147,7 +147,7 @@ export const SubTitle =styled.div `
 
 export const Link =styled.a `
     text-decoration:none;
-    color:#44b272;
+    color:${(props) =>props.color};;
 `;
 
 export const UserContactDetails =styled.div `
@@ -206,13 +206,13 @@ export const SubmitButton = styled.button `
     height:60px;
     border-radius:30px;
     font-size:18px;
-    color:#44b272;
-    border-color:#44b272;
+    color: ${(props) =>props.color};
+    border-color: ${(props) =>props.color};
     font-weight:bold;
     background:white;
     &:hover{
         color:white;
-        background:#44b272;
+        background:${(props) =>props.color};
         cursor: pointer;
     }
 `;
