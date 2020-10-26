@@ -13,8 +13,8 @@ export const Container = styled.div`
 
   @media (max-width: 768px){
     margin-left: 5%;
-    margin-right: 0em;
-    width: 80%;
+    margin-right: 0.5em;
+    width: 95%;
   }
 `;
 

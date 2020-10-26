@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin-right: 6em;
   width: 60%;
   height: 100%;
+  overflow: hidden;
 
   @media (max-width: 1400px){
     width: 70%;
@@ -14,8 +15,8 @@ export const Container = styled.div`
 
   @media (max-width: 768px){
     margin-left: 5%;
-    margin-right: 0em;
-    width: 80%;
+    margin-right: 0.5em;
+    width: 95%;
   }
 `;
 
