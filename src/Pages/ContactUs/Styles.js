@@ -55,8 +55,7 @@ export const OfficeBackground = styled.div`
     
 `;
 
-export const OurOfficeText = styled.p`
-        
+export const OurOfficeText = styled.p`        
         position: absolute;
         color:white;
         font-size:32px;
@@ -91,22 +90,20 @@ export const OfficeAddress = styled.div `
 
 export const AddressText = styled.p `
         
-        color:white;
-        text-align:center;
-        font-size:18px;
-        font-weight:bold;
-        
-        
+    color:white;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
 `;
 
 export const ContactUsContainer = styled.div `
     padding-right:60px;
 
     @media (min-width:1000px){
-            display:flex;
-            padding-left:10%;
-            padding-right:10%;
-        }
+        display:flex;
+        padding-left:10%;
+        padding-right:10%;
+    }
 `;
 
 
@@ -135,6 +132,7 @@ export const ContactDetailsContainer = styled.div `
     margin:30px 0;
     
 `;
+
 export const Logo =styled.div `
     margin-right:20px;
     padding-top:3px;
@@ -175,16 +173,15 @@ export const Input =styled.input `
     border-radius:5px;
     border-color:#a0a0a0;
     
-    &::placeholder{
-        
+    &::placeholder{        
         font-size:18px;
     }
+
     &:nth-child(2){
         @media (min-width:1000px){
             transform:translate(23px, 0);
         }
     }
-    
 `;
 
 
