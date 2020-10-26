@@ -1,8 +1,7 @@
 import React from 'react';
-import { Nav, Navbar } from 'react-bootstrap';
 import profile_image from "../../assets/profile.png"
 
-import { CircularImage, LogOut, TabNameDiv, Header } from "./Styles";
+import { CircularImage, LogOut, TabNameDiv, TopbarContainer, ProfileContainer } from "./Styles";
 
 import firebase from "../../firebase";
 
@@ -43,24 +42,20 @@ export default class TopBar extends React.Component {
     }
 
     return (
-      <Header>
-        <Navbar expand="lg">
+      <TopbarContainer>
+        
 
           <TabName />
 
-          <Nav className="ml-auto">
-            <Nav.Item>
-              <Nav.Link href="/" >
+          <ProfileContainer>            
 
                 <CircularImage src={profile_image} />
                 <LogOut onClick = {this.logOut}>LogOut</LogOut>
+              
+          </ProfileContainer>
 
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-
-        </Navbar>
-      </Header>
+        
+      </TopbarContainer>
     );
   }
 

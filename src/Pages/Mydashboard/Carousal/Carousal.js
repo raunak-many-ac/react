@@ -100,5 +100,4 @@ class Carousal extends React.Component {
 }
 
 export default withRouter(Carousal);
-
 //..to = {{pathname: "/casestudy", state: id}}

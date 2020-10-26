@@ -14,6 +14,10 @@ export const Container = styled.div`
 export const H2 = styled.h2`
      padding-left: 25%;
      white-space: nowrap;
+
+     @media(max-width: 768px){
+          padding-left: 0%;
+     }
 `;
 
 export const Card = styled.div`
@@ -26,6 +30,15 @@ export const Card = styled.div`
 
      &:hover{
           box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+     }
+
+     @media(max-width: 850px){
+          padding:10px;
+
+     }
+
+     @media(max-width: 600px){
+          padding:5px;
      }
 `;
 
@@ -47,26 +60,33 @@ export const Input = styled.input`
 export const ButtonContainer = styled.div`
      display: flex;
      justify-content: space-around;
+     margin-top: 5%;
 `;
 
-export const SignUpButton = styled.button`
-         width: 125px;
+export const AuthButton = styled.button`
+     width: 45%;
     padding: 10px;
     background-color: rgb(83, 187, 242);
     border: none;
     border-radius: 8px;
-    margin-right: 8px;
     cursor: pointer;
     color: rgb(255, 255, 255);
+    font-size: 20px;
+
+    @media(max-width: 600px){
+          font-size: 15px;
+          font-weight: bold;
+
+     }
+
+     @media(max-width: 500px){
+          font-size: 10px;
+          font-weight: bold;
+     }
+
+     @media(max-width: 30px){
+          font-size: 5px;
+          font-weight: bold;
+     }
 `;
 
-export const LoginButton = styled.button`
-     width: 125px;
-    padding: 10px;
-    background-color: rgb(83, 187, 242);
-    border: none;
-    border-radius: 8px;
-    margin-right: 8px;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-`;

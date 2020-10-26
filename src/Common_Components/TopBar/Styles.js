@@ -5,7 +5,11 @@ export const CircularImage = styled.img`
     border-width: 1;
     overflow: 'hidden';
     height: 40px;
-     width: 40px;
+    width: 40px;
+`;
+
+export const ProfileContainer = styled.div`
+    float: right;
 `;
 
 
@@ -29,10 +33,11 @@ export const TabNameDiv = styled.span`
     }
 `;
 
-export const Header = styled.div` 
+export const TopbarContainer = styled.div` 
     background-color: #fff; 
     margin-left: 14%;
     padding-right: 10%;
+    padding-top: 1%;
 
     @media (max-width: 1400px){
         width: 85%;
@@ -46,5 +51,8 @@ export const Header = styled.div`
 
     @media (max-width: 768px){
         margin-left: 0%;
+        width: 100%;
+        padding-right: 3%;
+
     }
 `;

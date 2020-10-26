@@ -1,7 +1,7 @@
 import React from "react";
 import firebase from "../firebase";
 
-import { Container, H2, Card, Form, Input, ButtonContainer, SignUpButton, LoginButton  } from "./Styles";
+import { Container, H2, Card, Form, Input, ButtonContainer, AuthButton } from "./Styles";
 
 export default class Login extends React.Component {
 
@@ -31,6 +31,8 @@ export default class Login extends React.Component {
                     console.log(user);
                }).catch((error) => {
                     console.log(error);
+                    alert("Something went wrong");
+
                })
      }
 
@@ -61,8 +63,8 @@ export default class Login extends React.Component {
                                    value={this.state.password} />
 
                               <ButtonContainer>
-                                   <LoginButton onClick={this.login}>Login</LoginButton>
-                                   <SignUpButton onClick={this.signUp}>SignUp</SignUpButton>
+                                   <AuthButton onClick={this.login}>Login</AuthButton>
+                                   <AuthButton onClick={this.signUp}>SignUp</AuthButton>
                               </ButtonContainer>
                          </Form>
                     </Card>
