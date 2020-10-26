@@ -40,7 +40,7 @@ class App extends React.Component {
   render() {
 
     //..if user is logged in show User the app content
-    // if (this.state.user) {
+    if (this.state.user) {
       return (
         <React.Fragment>
           <Router>
@@ -64,12 +64,12 @@ class App extends React.Component {
 
         </React.Fragment>
       );
-    // }
+    }
     
     //..if user is not logged in show Login Screen
-    // return(
-    //   <Login/>
-    // );
+    return(
+      <Login/>
+    );
 
   }
 }

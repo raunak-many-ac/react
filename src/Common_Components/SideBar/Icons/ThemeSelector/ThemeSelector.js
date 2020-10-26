@@ -90,7 +90,7 @@ export default class ThemeSelector extends React.Component {
           const { changeTheme } = this.context;
           changeTheme(
                {
-                    lightestColor: "#ffc8c8",
+                    lightestColor: "#ffdcdc",
                     lightColor: "#FF6666",
                     darkColor: "#FF0000",
                     inactiveColor: "#A87D7D",

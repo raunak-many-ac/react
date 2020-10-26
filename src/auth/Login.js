@@ -20,6 +20,7 @@ export default class Login extends React.Component {
                     console.log(user);
                }).catch((error) => {
                     console.log(error);
+                    alert("Wrong Email or password");
                })
      }
 

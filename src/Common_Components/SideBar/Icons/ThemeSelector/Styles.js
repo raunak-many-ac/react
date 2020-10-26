@@ -71,7 +71,7 @@ export const Purple = styled.button`
 export const SettingsButton = styled.button`
      border:none;
      background-color: ${(props) => props.color};
-     margin-top: 5%;
+     margin-top: 8%;
      outline: none;
 
      &:focus {
