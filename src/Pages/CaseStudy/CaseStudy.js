@@ -19,14 +19,14 @@ class CaseStudy extends React.Component {
       
       const caseStudyId = this.props.location.state;
 
-      this.props.fetchFromFirebase("case study 1");
+      this.props.fetchFromFirebase("case study 2");
     }
 
     return (
       <Container >
         <OverviewCard feature = {this.props.feature} title = {this.props.title} source = {this.props.source}/>
         <DetailContainer>
-          <Article article = {this.props.article}/>
+          <Article article = {this.props.article} url = {this.props.url}/>
           <Recommendation/>
         </DetailContainer>
       </Container>
@@ -41,7 +41,8 @@ const mapStateToProps = (state) =>{
     feature: state.caseStudyReducer.feature,
     source: state.caseStudyReducer.source,
     title: state.caseStudyReducer.title,
-    article: state.caseStudyReducer.article
+    article: state.caseStudyReducer.article,
+    url: state.caseStudyReducer.url
   }
 }
 

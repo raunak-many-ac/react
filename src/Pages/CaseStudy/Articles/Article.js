@@ -76,7 +76,7 @@ export default class Article extends React.Component {
 
                     <VideoPlayerContainer>
                          <StyledSection>
-                              <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' width="100%" />
+                              <ReactPlayer url= {this.props.url} width="100%" />
                          </StyledSection>
                     </VideoPlayerContainer>
 

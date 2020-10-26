@@ -10,7 +10,8 @@ const caseStudyReducer = (state = initState, actions) => {
       feature: actions.data.feature,
       source: actions.data.source,
       title: actions.data.title,
-      article: actions.data.article
+      article: actions.data.article,
+      url: actions.data.url
     }
   }
 

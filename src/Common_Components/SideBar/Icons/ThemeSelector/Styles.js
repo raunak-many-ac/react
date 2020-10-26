@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-        width: 100%;
-        height: 100px;
-        justify-content: space-around;
-        background-color:${props => props.color};
-        margin-top: 5%;
+        height: 70px;
+        width: 100%; /* width must be same size as NavBar to center */
+        text-align: center; /* Aligns <a> inside of NavIcon div */
+        margin-bottom: 0;   /* Puts space between NavItems */
+
+        a {
+        font-size: 2.7em;
+        color: ${(props) => props.active ? "white" : "#9FFFCB"};
+                :hover {
+                        opacity: 0.7;
+                        text-decoration: none; /* Gets rid of underlining of icons */
+                }  
+        }
 `;
 
 export const ColorContainer = styled.div`
@@ -62,9 +70,8 @@ export const Purple = styled.button`
 
 export const SettingsButton = styled.button`
      border:none;
-     padding:10px;
      background-color: ${(props) => props.color};
-     margin-left: 38%;
+     margin-top: 5%;
      outline: none;
 
      &:focus {
