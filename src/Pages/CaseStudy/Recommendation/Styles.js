@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
      scroll-behavior: smooth;
      width: 40%;
+     @media (max-width: 768px){
+          display:none;
+     }
 `;
 
 export const IconContainer = styled.ul`

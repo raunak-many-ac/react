@@ -27,20 +27,25 @@ export const VideoPlayerContainer = styled.div`
      margin-bottom: 5%;
      overflow: hidden;
      border: none;
+     border-color: white;
 
      @media(max-width: 1000px){
           border-radius: 10%;
-          height: 15%
      }
 
      @media(max-width: 768px){
           border-radius: 8%;
-          height: 10%
+          
      }
 
      @media(max-width: 550px){
           border-radius: 8%;
-          height: 5%
+          height: 15%;
+     }
+
+     @media(max-width: 450px){
+          border-radius: 8%;
+          height: 10%;
      }
 `;
 
