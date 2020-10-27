@@ -9,6 +9,16 @@ export const Container = styled.div`
     align-items: center;
     padding-left: 37%;
     padding-right: 30%;
+
+
+    @media(max-width: 768px){
+     padding-left: 27%;
+    padding-right: 20%;
+
+    }
+    @media(max-width: 550px){
+          padding:0%;
+     }
 `;
 
 export const H2 = styled.h2`
@@ -17,6 +27,11 @@ export const H2 = styled.h2`
 
      @media(max-width: 768px){
           padding-left: 0%;
+     }
+
+     @media(max-width: 550px){
+          padding-left: 30%;
+
      }
 `;
 
@@ -40,6 +55,14 @@ export const Card = styled.div`
      @media(max-width: 600px){
           padding:5px;
      }
+
+     @media(max-width: 550px){
+          max-width: 100%;
+          padding:10px;
+
+     }
+
+     
 `;
 
 export const Form = styled.form`
@@ -79,13 +102,13 @@ export const AuthButton = styled.button`
 
      }
 
-     @media(max-width: 500px){
+     /* @media(max-width: 500px){
           font-size: 10px;
           font-weight: bold;
      }
 
-     @media(max-width: 30px){
+     @media(max-width: 300px){
           font-size: 5px;
           font-weight: bold;
-     }
+     } */
 `;
