@@ -89,4 +89,3 @@ export const AuthButton = styled.button`
           font-weight: bold;
      }
 `;
-
