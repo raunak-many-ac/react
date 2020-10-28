@@ -73,8 +73,8 @@ class Carousal extends React.Component {
 
 
             this.props.data.map(slide => {
-
-              console.log("slide == " + slide);
+              
+              console.log(slide);
               return (
                 <SliderItem>
                   <SliderText>

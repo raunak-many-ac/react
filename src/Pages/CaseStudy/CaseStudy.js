@@ -13,17 +13,17 @@ import {fetchFromFirebase, deleteFunc} from "../../Store/actions/caseStudyAction
 class CaseStudy extends React.Component {
 
   render() {
+
     console.log(this.props.location);
     
-    if(this.props.feature == undefined){
-      
+    if(!this.props.feature){      
       const caseStudyId = this.props.location.state;
-
-      this.props.fetchFromFirebase("case study 2");
+      console.log(caseStudyId);
+      this.props.fetchFromFirebase(caseStudyId);
     }
 
     return (
-      <Container >
+      <Container>
         <OverviewCard feature = {this.props.feature} title = {this.props.title} source = {this.props.source}/>
         <DetailContainer>
           <Article article = {this.props.article} url = {this.props.url}/>
