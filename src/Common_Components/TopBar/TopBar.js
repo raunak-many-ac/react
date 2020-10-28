@@ -4,9 +4,10 @@ import profile_image from "../../assets/profile.png"
 import { CircularImage, LogOut, TabNameDiv, TopbarContainer, ProfileContainer } from "./Styles";
 
 import firebase from "../../firebase";
+import { withRouter } from 'react-router-dom';
 
 
-export default class TopBar extends React.Component {
+ class TopBar extends React.Component {
 
   state = {
     path: "/mydashboard"
@@ -61,6 +62,11 @@ export default class TopBar extends React.Component {
 
   logOut = () =>{
     firebase.auth().signOut();
+    this.props.history.push({
+      pathname: "/",
+    })
   }
 
 }
+
+export default withRouter(TopBar);
