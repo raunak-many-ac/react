@@ -59,7 +59,6 @@ export const StyledNavItem = styled.div`
         
 `;
 
-
 export const StyledSideNav = styled.div` 
         position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
         height: 100%;

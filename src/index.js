@@ -12,9 +12,7 @@ ReactDOM.render(
   <BrowserRouter>
 
     <ThemeProvider>
-      <App />
-      
-      
+      <App />          
     </ThemeProvider>
 
   </BrowserRouter>

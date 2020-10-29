@@ -60,9 +60,7 @@ export const Card = styled.div`
           max-width: 100%;
           padding:10px;
 
-     }
-
-     
+     }     
 `;
 
 export const Form = styled.form`
@@ -101,14 +99,22 @@ export const AuthButton = styled.button`
           font-weight: bold;
 
      }
+`;
 
-     /* @media(max-width: 500px){
-          font-size: 10px;
-          font-weight: bold;
-     }
+export const MessageBar = styled.div`
+     width: 100%;
+     height: 50px;
+     max-width: 400px;
+     padding-top: 2%;
+     color: white;
+     text-align: center;
+     vertical-align: middle;
+     background-color: ${props => props.color};
+     visibility: ${props => props.visible ? 'visible' : 'hidden'};
+`;
 
-     @media(max-width: 300px){
-          font-size: 5px;
-          font-weight: bold;
-     } */
+export const U = styled.u`
+     float: right;
+     margin-right: 2%;
+     cursor: pointer;
 `;

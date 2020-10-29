@@ -16,8 +16,6 @@ import firebase from "../../firebase";
 import { ThemeContext } from "../../Theme";
 
 
-
-
 const ContactDetails = (props) => {
 
     return (

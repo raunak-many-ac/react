@@ -36,16 +36,14 @@ class App extends React.Component {
     })
   }
 
-
   render() {
 
     //..if user is logged in show User the app content
     if (this.state.user) {
       return (
-        <React.Fragment>
+        <React.Fragment>          
           <Router>
             <SideBar />
-
             <Switch>
               <Route exact path="/" component={(props) => <TopBar/>} />
               <Route exact path="/mydashboard" component={(props) => <TopBar />} />
@@ -58,10 +56,8 @@ class App extends React.Component {
               <Route exact path="/mydashboard" component={MyDashboard} />
               <Route exact path="/casestudy" component={CaseStudy} />
               <Route exact path="/contactus" component={Contact} />
-
             </Switch>
           </Router>
-
         </React.Fragment>
       );
     }

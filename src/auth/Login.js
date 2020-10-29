@@ -1,9 +1,16 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 
-import { Container, H2, Card, Form, Input, ButtonContainer, AuthButton } from "./Styles";
+import { Container, H2, Card, Form, Input, ButtonContainer, AuthButton, MessageBar, U } from "./Styles";
 
-export default class Login extends React.Component {
+class Login extends React.Component {
+
+     state = {
+          showMessage: true,
+          color: "#ff3b3b",
+          message: ""
+     }
 
      constructor(props) {
           super(props);
@@ -14,7 +21,10 @@ export default class Login extends React.Component {
      }
 
      login = (e) => {
+
           e.preventDefault();
+          this.removeMessage();
+          this.showGreenAlertMessage("loging In...");
           if (this.ValidateEmail(this.state.email)) {
 
                firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -22,34 +32,76 @@ export default class Login extends React.Component {
                          console.log(user);
                     }).catch((error) => {
                          console.log(error);
-                         alert(!error.message ? "No Such User" : error.message);
+                         this.showRedAlertMessage( "No Such User");
                     })
           }
      }
 
      signUp = (e) => {
           e.preventDefault();
+          this.removeMessage();
+          this.showGreenAlertMessage("Signing Up...");
           if (this.ValidateEmail(this.state.email)) {
                firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                     .then((user) => {
                          console.log(user);
                     }).catch((error) => {
                          console.log(error);
-                         alert(error.message);
-
+                         this.showRedAlertMessage(error.message);
                     })
           }
      }
 
+     logOut = () => {
+          firebase.auth().signOut();
+          this.props.history.push({
+               pathname: "/",
+          })
+     }
+
      ValidateEmail(inputText) {
           var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-          if (inputText.match(mailformat)) {
-               return true;
-          }
-          else {
-               alert("You have entered an invalid email address!");    //The pop up alert for an invalid email address
+
+          if (!inputText || !inputText.match(mailformat)) {
+               this.showRedAlertMessage("You have entered an invalid email address!");    //The pop up alert for an invalid email address
                return false;
           }
+
+          return true;
+              
+     }
+
+     showRedAlertMessage = (message) => {
+          console.log("showing red alert message....")
+          this.setState(
+               {
+                    ...this.state,
+                    message,
+                    showMessage: true,
+                    color: "#ff3b3b",
+               }
+          )
+     }
+
+     showGreenAlertMessage = (message) => {
+          console.log("showing green alert message....")
+          this.setState(
+               {
+                    ...this.state,
+                    message,
+                    showMessage: true,
+                    color: "#00ff00",
+               }
+          )
+     }
+
+     removeMessage = () => {
+          this.setState(
+               {
+                    ...this.state,
+                    showMessage: false
+               }
+          )
      }
 
      handleChange = (e) => {
@@ -84,9 +136,10 @@ export default class Login extends React.Component {
                               </ButtonContainer>
                          </Form>
                     </Card>
+                    <MessageBar visible={this.state.showMessage} color={this.state.color}>{this.state.message}<U onClick={this.removeMessage}>close</U></MessageBar>
                </Container>
           );
      }
-
-
 }
+
+export default withRouter(Login);
