@@ -32,6 +32,9 @@ export const Red = styled.button`
      border-radius: 50%;
      border:none;
      margin-top: 2%;
+     &:focus{
+          outline: none;
+     }
 
  `;
 
@@ -43,6 +46,10 @@ export const Blue = styled.button`
      border-radius: 50%;
      border:none;
      margin-top: 2%;
+     &:focus{
+          outline: none;
+     }
+
  `;
 
 export const Green = styled.button`
@@ -53,6 +60,10 @@ export const Green = styled.button`
      border-radius: 50%;
      border:none;
      margin-top: 2%;
+     &:focus{
+          outline: none;
+     }
+
 
  `;
 
@@ -65,6 +76,10 @@ export const Purple = styled.button`
      border-radius: 50%;
      border:none;
      margin-top: 2%;
+
+     &:focus{
+          outline: none;
+     }
 
  `;
 

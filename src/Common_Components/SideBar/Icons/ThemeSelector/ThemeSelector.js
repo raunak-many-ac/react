@@ -74,8 +74,8 @@ export default class ThemeSelector extends React.Component {
 
 
                                    <ColorContainer visible={this.state.visible}>
-                                        <Red onClick={this.redTheme} />
                                         <Blue onClick={this.blueTheme} />
+                                        <Red onClick={this.redTheme} />                                        
                                         <Green onClick={this.greenTheme} />
                                         <Purple onClick={this.purpleTheme} />
                                    </ColorContainer>
