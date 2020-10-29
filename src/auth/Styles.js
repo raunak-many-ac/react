@@ -97,7 +97,10 @@ export const AuthButton = styled.button`
     @media(max-width: 600px){
           font-size: 15px;
           font-weight: bold;
+     }
 
+     &:focus{
+          outline: none;
      }
 `;
 
@@ -108,9 +111,26 @@ export const MessageBar = styled.div`
      padding-top: 2%;
      color: white;
      text-align: center;
+     font-weight: bold;
      vertical-align: middle;
      background-color: ${props => props.color};
      visibility: ${props => props.visible ? 'visible' : 'hidden'};
+
+     @media(max-width: 650px){
+          height: 70px;          
+          padding:10px;
+
+     }  
+
+     @media(max-width: 550px){
+          max-width: 100%;
+          padding:10px;
+
+     }  
+
+     @media(max-width: 550px){
+          max-width: 100%;
+     }  
 `;
 
 export const U = styled.u`

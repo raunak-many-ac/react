@@ -32,7 +32,7 @@ class Login extends React.Component {
                          console.log(user);
                     }).catch((error) => {
                          console.log(error);
-                         this.showRedAlertMessage( "No Such User");
+                         this.showRedAlertMessage( "No Such User 🤔");
                     })
           }
      }
@@ -45,9 +45,10 @@ class Login extends React.Component {
                firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
                     .then((user) => {
                          console.log(user);
+                         // this.logOut(); //..so that user can login manually
                     }).catch((error) => {
                          console.log(error);
-                         this.showRedAlertMessage(error.message);
+                         this.showRedAlertMessage(error.message+" ☹️");
                     })
           }
      }
@@ -63,7 +64,7 @@ class Login extends React.Component {
           var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
           if (!inputText || !inputText.match(mailformat)) {
-               this.showRedAlertMessage("You have entered an invalid email address!");    //The pop up alert for an invalid email address
+               this.showRedAlertMessage("You have entered an invalid email address! 😵");    //The pop up alert for an invalid email address
                return false;
           }
 
@@ -84,13 +85,13 @@ class Login extends React.Component {
      }
 
      showGreenAlertMessage = (message) => {
-          console.log("showing green alert message....")
+          console.log("showing green alert message.... ")
           this.setState(
                {
                     ...this.state,
                     message,
                     showMessage: true,
-                    color: "#00ff00",
+                    color: "#00e600",
                }
           )
      }

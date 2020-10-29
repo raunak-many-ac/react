@@ -118,7 +118,7 @@ export const FindUsContainer = styled.div `
 export const Title = styled.p `
     font-size:30px;
     margin-top:60px;
-    margin-bottom:60px;
+    margin-bottom: ${props => props.margin};
     
 `;
 
@@ -212,4 +212,27 @@ export const SubmitButton = styled.button `
         background:${(props) =>props.color};
         cursor: pointer;
     }
+
+    &:focus{
+        outline: none;
+    }
+`;
+
+export const MessageBar = styled.div`
+     width: 100%;
+     height: 40px;
+     max-width: 400px;
+     padding-top: 1%;
+     color: white;
+     font-weight: bold;
+     padding-left: 2%;
+     vertical-align: middle;
+     background-color: ${props => props.color};
+     visibility: ${props => props.visible ? 'visible' : 'hidden'};
+`;
+
+export const U = styled.u`
+     float: right;
+     margin-right: 2%;
+     cursor: pointer;
 `;
